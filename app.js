@@ -16,7 +16,6 @@ const { randomInt } = require("crypto")
 const HRModel=require("./models/HRModel")
 const JobModel=require("./models/JobsModule")
 const cookieparser=require("cookie-parser")
-const jwt = require("jsonwebtoken"); 
 const InternshipModel=require("./models/InternshipModule")
 const ApplicationModel = require("./models/ApplicationModel");
 const nodemailer=require("nodemailer")
@@ -197,13 +196,9 @@ app.post("/AdminLogin",async function(req,res){
         }
 
         // Generate JWT
-        const token = jwt.sign(
-            { id: admin._id, username: admin.username, role: "admin" },
-            "yourSecretKey", // Replace with your secret key
-            { expiresIn: "1h" }
-        );
+     
 
-        res.json({ message: "Login successful", token });
+        res.json({ message: "Login successful" });
     } catch (error) {
         console.error(error);
         res.status(500).json({ message: "Server error" });
