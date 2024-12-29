@@ -1,4 +1,10 @@
-require("dotenv").config()
+require("dotenv").config();
+ 
+
+console.log('Account SID:', process.env.TWILIO_ACCOUNT_SID);
+console.log('Auth Token:', process.env.TWILIO_AUTH_TOKEN);
+console.log('Sandbox Number:', process.env.TWILIO_SANDBOX_NUMBER);
+
 const app1=require("express")
 const mongoose=require("mongoose")
 const app=app1()
